@@ -1,5 +1,7 @@
 <?php
 
+require 'common.php';
+
 # We boiled the problem down to a formula for the sum of corners of a generic nxn
 # square. Since the top right corner is always n^2, the top left corner is n^2 - (n-1),
 # etc, you can summarize the sum of corners with the formula: 4n^2 -6n + 6. You can then
@@ -24,8 +26,7 @@ function p28($n) {
 }
 
 // recursive solution
-function p28_rec($n) {
-    ini_set('xdebug.max_nesting_level', $n);
+function p28_recursive($n) {
     if ($n == 1) {
         return 1;
     }
