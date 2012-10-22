@@ -36,9 +36,9 @@ function p18($input_file='p18a.txt') {
     }
 
     arsort($length_to);
-    $max_path = array_shift(array_keys($length_to));
+    list($k, $v) = each($length_to);
 
-    echo 'Max: ' . $path_to[$max_path] . ' = ' . array_shift($length_to);
+    echo 'Max: ' . $path_to[$k] . ' = ' . $v;
 }
 
 function p18_recursive($input_file='p18a.txt') {
@@ -48,7 +48,8 @@ function p18_recursive($input_file='p18a.txt') {
     $results = array_pop($func($graph));
 
     arsort($results);
-    echo 'Best: ' . array_shift(array_keys($results)) . ' = ' . array_shift($results);
+    list($k, $v) = each($results);
+    echo 'Best: ' . $k . ' = ' . $v;
     
 }
 
